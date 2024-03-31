@@ -26,11 +26,8 @@ export default function BasicTable() {
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Tag</TableCell>
-            <TableCell align="right">Posts</TableCell>
-            {/* <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell> */}
+            <TableCell sx={{ fontWeight: 'bold' }}>Tag</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' }} align="right">Posts</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
