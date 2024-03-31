@@ -6,6 +6,20 @@ import BasicTable from './components/Table/Table'
 function App() {
   const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(true)
+  const [size, setSize] = useState(window.innerWidth >= 350 ? 'medium' : 'small');
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSize(window.innerWidth >= 500 ? 'medium' : 'small');
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     setIsLoading(true)
@@ -14,6 +28,10 @@ function App() {
     }, 1000)
   }
   , [page])
+
+  useEffect(() => {
+
+  }, )
 
   return (
     <main>
@@ -32,7 +50,7 @@ function App() {
           marginBottom: 'auto',
         }
         
-      }} count={10000} color="primary" onChange={(e, value) => {
+      }} size={size} count={10000} color="primary" onChange={(e, value) => {
         setPage(value)
         console.log(value)
       }}/>
