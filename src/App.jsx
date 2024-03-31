@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { CircularProgress, Pagination, TablePagination } from '@mui/material'
 import BasicTable from './components/Table/Table'
+import NumberInputBasic from './components/Input/NumberInput'
 
 function App() {
   const [page, setPage] = useState(1)
@@ -35,6 +36,9 @@ function App() {
 
   return (
     <main>
+      <div>
+        <NumberInputBasic/>
+      </div>
       {isLoading ? <CircularProgress
         sx={{
           width: '100px !important',
