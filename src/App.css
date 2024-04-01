@@ -21,3 +21,10 @@ main {
 .table {
   width: 50%;
 }
+
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  width: 100%;
+}

@@ -33,7 +33,7 @@ export default function NumberInputBasic() {
   return (
     <NumberInput
       aria-label="Demo number input"
-      placeholder="Type a number…"
+      placeholder="Items per page…"
       value={value}
       onChange={(event, val) => setValue(val)}
       min={1}

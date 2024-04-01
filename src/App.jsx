@@ -3,6 +3,8 @@ import './App.css'
 import { CircularProgress, Pagination, TablePagination } from '@mui/material'
 import BasicTable from './components/Table/Table'
 import NumberInputBasic from './components/Input/NumberInput'
+import Sort from './components/Sort/Sort'
+import BasicSelect from './components/Select/Select'
 
 function App() {
   const [page, setPage] = useState(1)
@@ -30,14 +32,12 @@ function App() {
   }
   , [page])
 
-  useEffect(() => {
-
-  }, )
-
   return (
     <main>
-      <div>
+      <div className='controls-container'>
         <NumberInputBasic/>
+        <BasicSelect label='Sort by' values={['Popular', 'Activity', 'Name']}/>
+        <BasicSelect label='Order' values={['Ascending', 'Descending']}/>
       </div>
       {isLoading ? <CircularProgress
         sx={{
